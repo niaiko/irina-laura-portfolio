@@ -1,0 +1,69 @@
+// Footer links
+.footer-link {
+  display: block;
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: #0ea5e9;
+  }
+}
+
+// Social icons
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  color: #9ca3af;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: rgba(14, 165, 233, 0.1);
+    color: #0ea5e9;
+    transform: translateY(-2px);
+  }
+}
+
+// Back to top button animation
+.back-to-top {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.3);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+// Animation for footer elements
+footer {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

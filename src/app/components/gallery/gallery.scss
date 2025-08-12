@@ -1,0 +1,89 @@
+// Filter buttons
+.filter-btn {
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #9ca3af;
+  border-radius: 2rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  
+  &:hover {
+    background: rgba(14, 165, 233, 0.1);
+    border-color: #0ea5e9;
+    color: #0ea5e9;
+  }
+  
+  &.active {
+    background: linear-gradient(135deg, #0ea5e9, #8b5cf6);
+    border-color: transparent;
+    color: white;
+  }
+}
+
+// Gallery item
+.gallery-item {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+}
+
+// Button styles
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  border: 2px solid #0ea5e9;
+  color: #0ea5e9;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: #0ea5e9;
+    color: white;
+  }
+}
+
+// Line clamp utility
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+// Lightbox
+.lightbox-overlay {
+  backdrop-filter: blur(8px);
+}
+
+// Animation for gallery items
+.gallery-item {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.gallery-item:nth-child(1) { animation-delay: 0.1s; }
+.gallery-item:nth-child(2) { animation-delay: 0.2s; }
+.gallery-item:nth-child(3) { animation-delay: 0.3s; }
+.gallery-item:nth-child(4) { animation-delay: 0.4s; }
+.gallery-item:nth-child(5) { animation-delay: 0.5s; }
+.gallery-item:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

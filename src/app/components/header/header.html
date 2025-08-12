@@ -1,0 +1,59 @@
+<header class="fixed top-0 left-0 right-0 z-50 glass-effect">
+  <nav class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <div class="text-2xl font-bold gradient-text animate-fade-in">
+        AI Portfolio
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#home" class="nav-link hover:text-primary-500 transition-colors duration-300">Accueil</a>
+        <a href="#gallery" class="nav-link hover:text-primary-500 transition-colors duration-300">Galerie</a>
+        <a href="#tools" class="nav-link hover:text-primary-500 transition-colors duration-300">Outils</a>
+        <a href="#about" class="nav-link hover:text-primary-500 transition-colors duration-300">À propos</a>
+        <a href="#contact" class="nav-link hover:text-primary-500 transition-colors duration-300">Contact</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button 
+        class="md:hidden text-white hover:text-primary-500 transition-colors duration-300"
+        (click)="toggleMobileMenu()"
+        [attr.aria-expanded]="isMobileMenuOpen"
+        aria-label="Toggle navigation">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path 
+            *ngIf="!isMobileMenuOpen" 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M4 6h16M4 12h16M4 18h16">
+          </path>
+          <path 
+            *ngIf="isMobileMenuOpen" 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M6 18L18 6M6 6l12 12">
+          </path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div 
+      class="md:hidden transition-all duration-300 overflow-hidden"
+      [class.max-h-0]="!isMobileMenuOpen"
+      [class.max-h-96]="isMobileMenuOpen"
+      [class.opacity-0]="!isMobileMenuOpen"
+      [class.opacity-100]="isMobileMenuOpen">
+      <div class="py-4 space-y-4">
+        <a href="#home" class="block nav-link hover:text-primary-500 transition-colors duration-300" (click)="toggleMobileMenu()">Accueil</a>
+        <a href="#gallery" class="block nav-link hover:text-primary-500 transition-colors duration-300" (click)="toggleMobileMenu()">Galerie</a>
+        <a href="#tools" class="block nav-link hover:text-primary-500 transition-colors duration-300" (click)="toggleMobileMenu()">Outils</a>
+        <a href="#about" class="block nav-link hover:text-primary-500 transition-colors duration-300" (click)="toggleMobileMenu()">À propos</a>
+        <a href="#contact" class="block nav-link hover:text-primary-500 transition-colors duration-300" (click)="toggleMobileMenu()">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>

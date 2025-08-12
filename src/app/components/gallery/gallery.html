@@ -1,0 +1,124 @@
+<section id="gallery" class="py-20 px-6 relative overflow-hidden">
+  <!-- Three.js Interactive Background -->
+  <div #threeBackground class="absolute inset-0 z-0 opacity-30"></div>
+  
+  <div class="container mx-auto relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">Ma Galerie</h2>
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+        Découvrez mes créations d'images générées par intelligence artificielle, 
+        alliant créativité humaine et puissance technologique.
+      </p>
+    </div>
+
+    <!-- Category Filters -->
+    <div #filterButtons class="flex flex-wrap justify-center gap-4 mb-12">
+      <button 
+        *ngFor="let category of categories" 
+        (click)="filterByCategory(category)"
+        [class.active]="selectedCategory === category"
+        class="filter-btn">
+        {{ getCategoryLabel(category) }}
+      </button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div 
+        *ngFor="let item of displayedItems; trackBy: trackByItemId"
+        class="gallery-item hover-lift glass-effect rounded-xl overflow-hidden group cursor-pointer"
+        (click)="openLightbox(item)">
+        
+        <!-- Image -->
+        <div class="relative overflow-hidden">
+          <img 
+            [src]="item.imageUrl" 
+            [alt]="item.title"
+            class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+            loading="lazy">
+          
+          <!-- Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute bottom-4 left-4 right-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs px-2 py-1 bg-primary-500 text-white rounded-full">
+                  {{ item.tool }}
+                </span>
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2 text-white group-hover:text-primary-500 transition-colors duration-300">
+            {{ item.title }}
+          </h3>
+          <p class="text-gray-400 text-sm mb-4 line-clamp-2">
+            {{ item.description }}
+          </p>
+          
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2">
+            <span 
+              *ngFor="let tag of item.tags" 
+              class="text-xs px-2 py-1 bg-dark-400 text-gray-300 rounded-full">
+              #{{ tag }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load More Button -->
+    <div class="text-center mt-12" *ngIf="hasMoreItems">
+      <button class="btn-secondary" (click)="loadMoreItems()">
+        Voir plus de créations
+      </button>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div 
+    *ngIf="selectedItem" 
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90"
+    (click)="closeLightbox()">
+    <div class="max-w-4xl max-h-full overflow-auto" (click)="$event.stopPropagation()">
+      <div class="relative">
+        <img 
+          [src]="selectedItem.imageUrl" 
+          [alt]="selectedItem.title"
+          class="w-full h-auto rounded-lg">
+        
+        <button 
+          (click)="closeLightbox()"
+          class="absolute top-4 right-4 w-10 h-10 bg-black/50 text-white rounded-full flex items-center justify-center hover:bg-black/70 transition-colors duration-300">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
+          <h3 class="text-2xl font-bold text-white mb-2">{{ selectedItem.title }}</h3>
+          <p class="text-gray-300 mb-4">{{ selectedItem.description }}</p>
+          <div class="flex items-center justify-between">
+            <span class="text-sm px-3 py-1 bg-primary-500 text-white rounded-full">
+              {{ selectedItem.tool }}
+            </span>
+            <div class="flex gap-2">
+              <span 
+                *ngFor="let tag of selectedItem.tags" 
+                class="text-xs px-2 py-1 bg-white/20 text-white rounded-full">
+                #{{ tag }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

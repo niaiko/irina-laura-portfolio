@@ -17,57 +17,57 @@ export class Gallery {
   private galleryItems: GalleryItem[] = [
     {
       id: 1,
-      title: "Portrait Cyberpunk",
-      description: "Portrait futuriste créé avec Midjourney et retouché sur Photoshop",
-      imageUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&h=800&fit=crop",
-      tags: ["cyberpunk", "portrait", "futuristic"],
+      title: "Microsoft Clarity - Analyser le comportement des visiteurs",
+      description: "Représentation réaliste créée avec Midjourney et retouchée sur Photoshop",
+      imageUrl: "images/ms-image.jpg",
+      tags: ["Microsoft", "Clarity", "Outils"],
       tool: "Midjourney + Photoshop",
       category: "portrait"
     },
     {
       id: 2,
-      title: "Paysage Fantastique",
-      description: "Paysage onirique généré avec Leonardo AI",
-      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
-      tags: ["landscape", "fantasy", "dreamy"],
-      tool: "Leonardo AI",
+      title: "Fitness diète",
+      description: "Illustration d'app d'entraînement pour débutants",
+      imageUrl: "images/fiteness-pal.png",
+      tags: ["fitness", "app", "débutant"],
+      tool: "Midjourney + Leonardo AI",
       category: "landscape"
     },
     {
       id: 3,
-      title: "Art Abstrait",
-      description: "Composition abstraite créée avec Fotor AI",
-      imageUrl: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&h=600&fit=crop",
-      tags: ["abstract", "colorful", "modern"],
-      tool: "Fotor AI",
+      title: "Corde sauter - sport",
+      description: "Visuel sprotif avec corde à sauter",
+      imageUrl: "images/corde-sauter.png",
+      tags: ["seo", "marketing", "blog"],
+      tool: "Leonardo AI + Photoshop",
       category: "abstract"
     },
     {
       id: 4,
-      title: "Concept Art - Véhicule",
-      description: "Design conceptuel de véhicule futuriste",
-      imageUrl: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&h=500&fit=crop",
-      tags: ["concept", "vehicle", "design"],
-      tool: "Midjourney + Photoshop",
+      title: "Hébergement web Infomaniak",
+      description: "Créa promotionnelle hébergement web écoresponsable",
+      imageUrl: "images/hebergement-web.png",
+      tags: ["hébergement", "infomaniak", "web"],
+      tool: "Photoshop",
       category: "concept"
     },
     {
       id: 5,
-      title: "Personnage Fantasy",
-      description: "Création de personnage pour univers fantasy",
-      imageUrl: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=800&fit=crop",
-      tags: ["character", "fantasy", "rpg"],
-      tool: "Leonardo AI + Photoshop",
+      title: "COP",
+      description: "La Conférence des Parties est l'organe décisionnel suprême de la Convention",
+      imageUrl: "images/cop-image.png",
+      tags: ["navigateur", "moteur", "guide"],
+      tool: "Midjourney + Photoshop",
       category: "character"
     },
     {
       id: 6,
-      title: "Architecture Futuriste",
-      description: "Visualisation architecturale avec IA",
-      imageUrl: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1f?w=800&h=600&fit=crop",
-      tags: ["architecture", "futuristic", "building"],
-      tool: "Midjourney",
-      category: "concept"
+      title: "Content Creation",
+      description: "Icône et visuel pour création de contenu",
+      imageUrl: "images/content-creation.png",
+      tags: ["content", "social", "design"],
+      tool: "Fotor AI + Photoshop",
+      category: "portrait"
     }
   ];
 
